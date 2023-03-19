@@ -19,6 +19,7 @@ packet[COMMUNITY_KEY] = 'offer_engine_family';
 packet['need'] = 'car_rental_offer';
 
 const publish = () => {
+    packet['id'] = Date.now().toString();
     console.log(` [<] ${packet.toJsonString()}`);
     connection.publish(packet);
 }
